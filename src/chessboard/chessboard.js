@@ -6,10 +6,8 @@
 // https://github.com/oakmac/chessboardjs/blob/master/LICENSE.md
 
 // start anonymous scope
-(function () {
-  "use strict";
-
-  var $ = window["jQuery"];
+export function initial(jquery) {
+  var $ = jquery;
 
   // ---------------------------------------------------------------------------
   // Constants
@@ -677,6 +675,7 @@
   // ---------------------------------------------------------------------------
 
   function constructor(containerElOrString, config) {
+    console.log("constructor", containerElOrString, config);
     // first things first: check basic dependencies
     if (!checkJQuery()) return null;
     var $container = checkContainerArg(containerElOrString);
@@ -1910,19 +1909,18 @@
     return widget;
   } // end constructor
 
-  // TODO: do module exports here
-  window["Chessboard"] = constructor;
-
-  // support legacy ChessBoard name
-  window["ChessBoard"] = window["Chessboard"];
+  return constructor;
 
   // expose util functions
-  window["Chessboard"]["fenToObj"] = fenToObj;
-  window["Chessboard"]["objToFen"] = objToFen;
-})(); // end anonymous wrapper
+  // window["Chessboard"]["fenToObj"] = fenToObj;
+  // window["Chessboard"]["objToFen"] = objToFen;
+}
 
-/* export Chessboard object if using node or any other CommonJS compatible
- * environment */
-if (typeof exports !== "undefined") {
-  exports.Chessboard = window.Chessboard;
+export class ChessBoard {
+  constructor(params) {
+    console.log("ChessBoard constructor");
+    console.log(params);
+
+    return initial(params.jquery)(params.selector, params.config);
+  }
 }
