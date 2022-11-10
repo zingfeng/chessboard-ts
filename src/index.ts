@@ -1,13 +1,29 @@
-import { ChessBoard } from "./chessboard/chessboard";
+import { ChessBoardJS } from "./chessboard/chessboard";
 import $ from "jquery";
 import "./css/chessboard.css";
 
-console.log("Hello World");
-
-const chessBoard = new ChessBoard({
-  jquery: $,
-  selector: "#chessboard",
+interface ChessBoardConfig {
+  selector: string;
   config: {
-    position: "start",
-  },
-});
+    position?: string;
+    draggable?: boolean;
+    dropOffBoard?: "snapback" | "trash";
+    sparePieces?: boolean;
+  };
+}
+class ChessBoard {
+  constructor(config: ChessBoardConfig) {
+    const chessBoard = new ChessBoardJS({
+      jquery: $,
+      selector: "#chessboard",
+      config: {
+        position: "start",
+        draggable: true,
+        dropOffBoard: "snapback", // this is the default
+      },
+    });
+    return chessBoard;
+  }
+}
+
+export { ChessBoard, ChessBoardConfig };

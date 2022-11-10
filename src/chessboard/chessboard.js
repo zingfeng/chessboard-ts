@@ -1916,11 +1916,8 @@ export function initial(jquery) {
   // window["Chessboard"]["objToFen"] = objToFen;
 }
 
-export class ChessBoard {
+export class ChessBoardJS {
   constructor(params) {
-    console.log("ChessBoard constructor");
-    console.log(params);
-
     return initial(params.jquery)(params.selector, params.config);
   }
 }
