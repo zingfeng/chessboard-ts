@@ -15,12 +15,8 @@ class ChessBoard {
   constructor(config: ChessBoardConfig) {
     const chessBoard = new ChessBoardJS({
       jquery: $,
-      selector: "#chessboard",
-      config: {
-        position: "start",
-        draggable: true,
-        dropOffBoard: "snapback", // this is the default
-      },
+      selector: config.selector,
+      config: config.config,
     });
     return chessBoard;
   }
