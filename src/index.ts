@@ -1,25 +1,4 @@
-import { ChessBoardJS } from "./chessboard/chessboard";
-import $ from "jquery";
-import "./css/chessboard.css";
+import { ChessBoard, ChessBoardConfig } from "./chessboard";
 
-class ChessBoardConfig {
-  selector: string;
-  config: {
-    position?: string;
-    draggable?: boolean;
-    dropOffBoard?: "snapback" | "trash";
-    sparePieces?: boolean;
-  };
-}
-class ChessBoard {
-  constructor(config: ChessBoardConfig) {
-    const chessBoard = new ChessBoardJS({
-      jquery: $,
-      selector: config.selector,
-      config: config.config,
-    });
-    return chessBoard;
-  }
-}
-
+export * from "./interface";
 export { ChessBoard, ChessBoardConfig };
