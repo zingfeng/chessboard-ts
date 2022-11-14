@@ -2,7 +2,7 @@ import { ChessBoardJS } from "./chessboard/chessboard";
 import $ from "jquery";
 import "./css/chessboard.css";
 
-interface ChessBoardConfig {
+class ChessBoardConfig {
   selector: string;
   config: {
     position?: string;
