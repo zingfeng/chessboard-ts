@@ -1,6 +1,6 @@
 {
   "name": "chessboard-ts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "chessboardjs in typescript",
   "main": "dist/index.js",
   "scripts": {
