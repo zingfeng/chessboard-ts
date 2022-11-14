@@ -1,7 +1,7 @@
 import { ChessBoardJS } from "./origin";
 import { ChessBoardConfig } from "./interface";
 import $ from "jquery";
-import "./css/chessboard.css";
+import "./style.css";
 
 class ChessBoard {
   constructor(config: ChessBoardConfig) {

@@ -1,5 +1,5 @@
 import { ChessBoardConfig } from "./interface";
-import "./css/chessboard.css";
+import "./style.css";
 declare class ChessBoard {
     constructor(config: ChessBoardConfig);
 }
