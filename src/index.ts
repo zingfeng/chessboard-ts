@@ -1,4 +1,4 @@
-import { ChessBoard, ChessBoardConfig } from "./chessboard";
+import ChessBoard from "./chessboard";
 
 export * from "./interface";
-export { ChessBoard, ChessBoardConfig };
+export { ChessBoard };

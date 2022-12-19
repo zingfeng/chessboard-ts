@@ -3,4 +3,4 @@ import "./style.css";
 declare class ChessBoard {
     constructor(config: ChessBoardConfig);
 }
-export { ChessBoard, ChessBoardConfig };
+export default ChessBoard;
